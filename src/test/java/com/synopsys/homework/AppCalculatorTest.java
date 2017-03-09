@@ -17,7 +17,7 @@ import com.synopsys.homework.exception.CalculatorException;
  * 			Integer overflow/underflow
  */
 public class AppCalculatorTest {
-	
+
 	/**
 	 * Basic addition operation test, adding two negative integers
 	 */
@@ -84,7 +84,7 @@ public class AppCalculatorTest {
 		int expected = AppCalculator.evaluate(expression);
 		Assert.assertEquals(55, expected);
 	}
-	
+
 	/**
 	 * Number expression should convert the string into its corresponding
 	 * integer and return
@@ -99,7 +99,7 @@ public class AppCalculatorTest {
 	}
 
 	// Exception testcases section
-	
+
 	/**
 	 * Basic multiplication operation
 	 * 
@@ -110,7 +110,7 @@ public class AppCalculatorTest {
 		String expression = "mult(a, -3)";
 		AppCalculator.evaluate(expression);
 	}
-	
+
 	/**
 	 * Invalid logging level throws an exception
 	 */
@@ -156,39 +156,41 @@ public class AppCalculatorTest {
 		AppCalculator.evaluate(expression);
 	}
 
-	
 	/**
-	 * Adding Interger.MAX_VALUE + 1 should throw an Arithmetic exception on overflow
+	 * Adding Interger.MAX_VALUE + 1 should throw an Arithmetic exception on
+	 * overflow
 	 * 
 	 * @throws CalculatorException
 	 */
 	@Test(expected = ArithmeticException.class)
 	public void numOutOfBoundAddition() throws CalculatorException {
 		String outOfRangeNum = String.valueOf(Integer.MAX_VALUE);
-		String expression = "add("+outOfRangeNum+", 1)";
+		String expression = "add(" + outOfRangeNum + ", 1)";
 		AppCalculator.evaluate(expression);
 	}
-	
+
 	/**
-	 * Subtracting 2 from Interger.MIN_VALUE should throw an Arithmetic exception
+	 * Subtracting 2 from Interger.MIN_VALUE should throw an Arithmetic
+	 * exception
 	 */
 	@Test(expected = ArithmeticException.class)
 	public void numOutOfBoundSubtraction() throws CalculatorException {
 		String outOfRangeNum = String.valueOf(Integer.MIN_VALUE);
-		String expression = "sub("+outOfRangeNum+", 2)";
+		String expression = "sub(" + outOfRangeNum + ", 2)";
 		AppCalculator.evaluate(expression);
 	}
-	
+
 	/**
-	 * Multiplying 5 with Interger.MAX_VALUE should throw an Arithmetic exception
+	 * Multiplying 5 with Interger.MAX_VALUE should throw an Arithmetic
+	 * exception
 	 */
 	@Test(expected = ArithmeticException.class)
 	public void numOutOfBoundMultiplication() throws CalculatorException {
 		String outOfRangeNum = String.valueOf(Integer.MAX_VALUE);
-		String expression = "mult("+outOfRangeNum+", 2)";
+		String expression = "mult(" + outOfRangeNum + ", 2)";
 		AppCalculator.evaluate(expression);
 	}
-	
+
 	/**
 	 * Test divide by zero exception
 	 */

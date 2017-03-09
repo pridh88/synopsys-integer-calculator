@@ -7,10 +7,14 @@ import ch.qos.logback.classic.Logger;
 
 import com.synopsys.homework.LogLevelEnum;
 
+/*
+ * Utility class for setting Logging Level
+ */
 public class CliOptionUtil {
 
 	/**
 	 * Method to test supported logging levels
+	 * 
 	 * @param str : Logging level specified by the user
 	 * @return
 	 */
@@ -30,16 +34,13 @@ public class CliOptionUtil {
 	public static void setAppLogLevel(String newLevel) {
 		Level level;
 
-		if ("error".equalsIgnoreCase(newLevel)
-				|| "severe".equalsIgnoreCase(newLevel)) {
+		if ("error".equalsIgnoreCase(newLevel) || "severe".equalsIgnoreCase(newLevel)) {
 			level = Level.ERROR;
-		} else if ("debug".equalsIgnoreCase(newLevel)
-				|| "fine".equalsIgnoreCase(newLevel)) {
+		} else if ("debug".equalsIgnoreCase(newLevel) || "fine".equalsIgnoreCase(newLevel)) {
 			level = Level.DEBUG;
-		} else if ("warning".equalsIgnoreCase(newLevel)
-				|| "warn".equalsIgnoreCase(newLevel)) {
+		} else if ("warning".equalsIgnoreCase(newLevel) || "warn".equalsIgnoreCase(newLevel)) {
 			level = Level.WARN;
-		} else if ("OFF".equalsIgnoreCase(newLevel)){
+		} else if ("OFF".equalsIgnoreCase(newLevel)) {
 			level = Level.OFF;
 		} else {
 			level = Level.INFO;
