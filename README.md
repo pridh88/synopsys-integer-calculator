@@ -3,9 +3,9 @@ Simple command-line calculator implemented using ANTL4 to parse and evaluate an 
 Returns Integer result.
 
 ## Environment setup:
-### *ANTLR4
-### *Apache Maven 3.2.3
-### *Minimum JDK version: 1.8
+#### ANTLR4
+#### Apache Maven 3.2.3
+#### Minimum JDK version: 1.8
 
 ## Project Structure
 ###src/main/antlr4
@@ -39,7 +39,7 @@ Returns Integer result.
  "mult(add(2, 2), div(9, 3))" OFF
 12
 ### 2. default logging INFO
-target$java -jar integer-calculator-program-0.0.1-SNAPSHOT-jar-with-dependencies.jar "add(1,2)"
+/target$java -jar integer-calculator-program-0.0.1-SNAPSHOT-jar-with-dependencies.jar "add(1,2)"
 19:08:17.246 [main] DEBUG com.synopsys.homework.AppCalculator - Inside main, expression to be evaluated: add(1,2)
 19:08:17.256 [main] DEBUG com.synopsys.homework.AppCalculator - Inside evaluate(), expression to be evaluated: add(1,2)
 19:08:17.404 [main] DEBUG com.synopsys.homework.EvaluateExpressionVisitor - Inside visitNumExp..
@@ -51,6 +51,6 @@ target$java -jar integer-calculator-program-0.0.1-SNAPSHOT-jar-with-dependencies
 3
 
 ### 3. Invalid expression
-et>java -jar integer-calculator-program-0.0.1-SNAPSHOT-jar-with-dependencies.jar "div("a", 2)" ERROR
+/target$java -jar integer-calculator-program-0.0.1-SNAPSHOT-jar-with-dependencies.jar "div("a", 2)" ERROR
 19:10:42.220 [main] ERROR com.synopsys.homework.EvaluateExpressionVisitor - Operands cannot be null
 19:10:42.226 [main] ERROR com.synopsys.homework.AppCalculator - Invalid expression, couldn't be evaluated
