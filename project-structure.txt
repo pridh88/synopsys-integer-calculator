@@ -1,4 +1,5 @@
-Integer 
+Simple command-line calculator implemented using ANTL4 to parse and evaluate the integer expression.
+Returns Integer result.
 
 Environment setup:
 
@@ -41,6 +42,26 @@ package: com.synopsys.homework
 	-AppCalculatorTest: unit tests of AppCalculator.java
 	-CliOptionUtilTest: unit tests for CliOptionUtil.ava
 
+Sample output:
 
+sample1: logging set to OFF
+/target>java -jar integer-calculator-program-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+ "mult(add(2, 2), div(9, 3))" OFF
+12
 
-	
+sample2: default logging INFO
+target>java -jar integer-calculator-program-0.0.1-SNAPSHOT-jar-with-dependencies.jar "add(1,2)"
+19:08:17.246 [main] DEBUG com.synopsys.homework.AppCalculator - Inside main, expression to be evaluated: add(1,2)
+19:08:17.256 [main] DEBUG com.synopsys.homework.AppCalculator - Inside evaluate(), expression to be evaluated: add(1,2)
+19:08:17.404 [main] DEBUG com.synopsys.homework.EvaluateExpressionVisitor - Inside visitNumExp..
+19:08:17.405 [main] INFO com.synopsys.homework.EvaluateExpressionVisitor - The numerical value is, 1
+19:08:17.406 [main] DEBUG com.synopsys.homework.EvaluateExpressionVisitor - Inside visitNumExp..
+19:08:17.407 [main] INFO com.synopsys.homework.EvaluateExpressionVisitor - The numerical value is, 2
+19:08:17.408 [main] DEBUG com.synopsys.homework.EvaluateExpressionVisitor - Adding values 1 and 2
+19:08:17.409 [main] INFO com.synopsys.homework.EvaluateExpressionVisitor - The result of addition is 3
+3
+
+sample3: Invalid expression
+et>java -jar integer-calculator-program-0.0.1-SNAPSHOT-jar-with-dependencies.jar "div("a", 2)" ERROR
+19:10:42.220 [main] ERROR com.synopsys.homework.EvaluateExpressionVisitor - Operands cannot be null
+19:10:42.226 [main] ERROR com.synopsys.homework.AppCalculator - Invalid expression, couldn't be evaluated
