@@ -13,7 +13,7 @@ Returns Integer result.
 ###target/generated-sources
 ####package:antlr4
 #####antl4 generated classes for Lexer, Parser, BaseVisitor and BaseListener
-###Note: This path is set as source path.
+######Note: This path is set as source path.
 
 ####package: com.synopsys.homework
 #####AppCalculator.java: Main class, that takes two command line argments
